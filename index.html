@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>România · App Mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --albastru-profund: #0B3C5D;
+  --albastru-dark:    #051e30;
+  --galben-vibrant:   #FFC72C;
+  --rosu-accent:      #C8102E;
+  --verde-natura:     #2E7D32;
+  --albastru-deschis: #4DA8DA;
+  --alb:              #FFFFFF;
+  --gri-deschis:      #F5F5F5;
+  --gri-text:         #4A4A4A;
+  --negru:            #111111;
+  --font-titlu:       'Montserrat', system-ui, sans-serif;
+  --font-text:        'Open Sans', system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+body {
+  font-family: var(--font-text);
+  background: linear-gradient(135deg, #051e30 0%, #0B3C5D 100%);
+  color: var(--alb);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 16px 56px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* PAGE HEADER */
+.page-head {
+  text-align: center;
+  margin-bottom: 32px;
+  max-width: 720px;
+}
+.page-head .eyebrow {
+  font-family: var(--font-titlu);
+  font-size: 11px; font-weight: 700; letter-spacing: .3em;
+  text-transform: uppercase; color: var(--galben-vibrant);
+  margin-bottom: 10px;
+}
+.page-head h1 {
+  font-family: var(--font-titlu);
+  font-size: 38px; font-weight: 800; letter-spacing: -.02em;
+  margin-bottom: 8px;
+}
+.page-head p {
+  font-size: 14px; color: rgba(255,255,255,.6); line-height: 1.6;
+}
+
+/* SCREEN TABS */
+.screen-tabs {
+  display: flex; gap: 8px; margin-bottom: 28px;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.1);
+  padding: 5px; border-radius: 999px;
+}
+.screen-tab {
+  font-family: var(--font-titlu);
+  font-size: 11px; font-weight: 700; letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 10px 18px; border-radius: 999px;
+  cursor: pointer; border: 0; background: transparent;
+  color: rgba(255,255,255,.5);
+  transition: all .25s;
+}
+.screen-tab:hover { color: rgba(255,255,255,.85); }
+.screen-tab.active {
+  background: var(--galben-vibrant); color: var(--albastru-profund);
+}
+
+/* PHONE FRAME */
+.phone {
+  width: 320px; height: 660px;
+  background: var(--negru);
+  border-radius: 42px;
+  padding: 12px;
+  position: relative;
+  box-shadow: 0 30px 80px rgba(0,0,0,.5), 0 0 0 2px rgba(255,255,255,.06);
+  flex-shrink: 0;
+}
+/* Notch */
+.phone::before {
+  content: ""; position: absolute;
+  top: 12px; left: 50%; transform: translateX(-50%);
+  width: 110px; height: 24px;
+  background: var(--negru);
+  border-radius: 0 0 18px 18px;
+  z-index: 10;
+}
+/* Side button accents */
+.phone::after {
+  content: ""; position: absolute;
+  top: 110px; right: -2px;
+  width: 3px; height: 60px;
+  background: rgba(255,255,255,.08);
+  border-radius: 2px;
+}
+
+.screen {
+  width: 100%; height: 100%;
+  border-radius: 32px;
+  overflow: hidden;
+  position: relative;
+  background: var(--albastru-dark);
+  display: none;
+}
+.screen.active { display: block; }
+
+/* STATUS BAR */
+.status-bar {
+  position: relative; z-index: 5;
+  height: 32px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 22px 0 24px;
+  font-family: var(--font-titlu);
+  font-size: 11px; font-weight: 700; color: var(--alb);
+}
+.status-bar .icons { display: flex; gap: 4px; align-items: center; }
+.status-bar .ico { width: 14px; height: 11px; background: currentColor; opacity: .9; border-radius: 2px; }
+
+/* ─────── SCREEN 1 · SPLASH ─────── */
+#screen-splash {
+  background-image: linear-gradient(180deg, rgba(5,30,48,.4) 0%, rgba(5,30,48,.85) 60%, rgba(5,30,48,1) 100%), url('photos/01-carpati.jpg');
+  background-size: cover; background-position: center;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center; padding: 0 28px;
+}
+#screen-splash.active { display: flex; }
+#screen-splash .tricolor {
+  display: flex; width: 60px; height: 3px;
+  margin-bottom: 24px;
+}
+#screen-splash .tc { flex: 1; }
+#screen-splash .tc1 { background: #002B7F; }
+#screen-splash .tc2 { background: #FCD116; }
+#screen-splash .tc3 { background: #CE1126; }
+#screen-splash .splash-logo {
+  height: 70px; margin-bottom: 24px;
+  filter: brightness(1) drop-shadow(0 4px 16px rgba(0,0,0,.4));
+}
+#screen-splash h2 {
+  font-family: var(--font-titlu);
+  font-size: 38px; font-weight: 900; letter-spacing: -.02em;
+  margin-bottom: 8px;
+}
+#screen-splash .subtitle {
+  font-size: 12px; color: rgba(255,255,255,.7);
+  letter-spacing: .2em; text-transform: uppercase;
+  margin-bottom: 48px;
+}
+#screen-splash .splash-cta {
+  width: 100%; padding: 16px;
+  background: var(--galben-vibrant); color: var(--albastru-profund);
+  font-family: var(--font-titlu);
+  font-size: 12px; font-weight: 800; letter-spacing: .15em;
+  text-transform: uppercase;
+  border: 0; border-radius: 12px; cursor: pointer;
+  margin-bottom: 12px;
+}
+#screen-splash .splash-link {
+  font-family: var(--font-titlu);
+  font-size: 11px; font-weight: 600; letter-spacing: .1em;
+  color: rgba(255,255,255,.65);
+  text-transform: uppercase;
+  background: transparent; border: 0; cursor: pointer;
+}
+
+/* ─────── SCREEN 2 · HOME ─────── */
+#screen-home { background: var(--albastru-dark); padding-bottom: 76px; overflow-y: auto; }
+.app-header {
+  padding: 8px 20px 16px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.app-header .greeting-eyebrow {
+  font-size: 10px; color: rgba(255,255,255,.45);
+  letter-spacing: .15em; text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.app-header .greeting-name {
+  font-family: var(--font-titlu);
+  font-size: 17px; font-weight: 700; color: var(--alb);
+}
+.app-header .avatar {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--galben-vibrant), var(--rosu-accent));
+  font-family: var(--font-titlu);
+  font-size: 13px; font-weight: 800;
+  color: var(--albastru-profund);
+  display: flex; align-items: center; justify-content: center;
+}
+
+.search-bar {
+  margin: 0 20px 20px;
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 12px;
+  padding: 12px 16px;
+  display: flex; align-items: center; gap: 10px;
+  font-size: 12px; color: rgba(255,255,255,.5);
+}
+.search-bar svg { flex-shrink: 0; }
+
+.section-title {
+  margin: 0 20px 12px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.section-title h3 {
+  font-family: var(--font-titlu);
+  font-size: 14px; font-weight: 700; color: var(--alb);
+}
+.section-title .see-all {
+  font-size: 10px; color: var(--galben-vibrant);
+  font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+}
+
+.featured-card {
+  margin: 0 20px 24px;
+  height: 180px; border-radius: 16px; overflow: hidden;
+  position: relative; cursor: pointer;
+}
+.featured-card img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+.featured-card .featured-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 30%, rgba(5,30,48,.85) 100%);
+}
+.featured-card .featured-meta {
+  position: absolute; left: 16px; right: 16px; bottom: 14px;
+}
+.featured-card .featured-tag {
+  display: inline-block;
+  background: var(--galben-vibrant); color: var(--albastru-profund);
+  font-family: var(--font-titlu);
+  font-size: 8px; font-weight: 800; letter-spacing: .15em;
+  text-transform: uppercase; padding: 4px 8px; border-radius: 4px;
+  margin-bottom: 8px;
+}
+.featured-card .featured-title {
+  font-family: var(--font-titlu);
+  font-size: 18px; font-weight: 800; color: var(--alb);
+  letter-spacing: -.01em;
+}
+
+.dest-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+  padding: 0 20px;
+}
+.dest-card {
+  height: 130px; border-radius: 12px; overflow: hidden;
+  position: relative; cursor: pointer;
+}
+.dest-card img { width: 100%; height: 100%; object-fit: cover; }
+.dest-card .dest-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(5,30,48,.85) 100%);
+}
+.dest-card .dest-name {
+  position: absolute; left: 10px; right: 10px; bottom: 8px;
+  font-family: var(--font-titlu);
+  font-size: 11px; font-weight: 700; color: var(--alb);
+}
+
+/* ─────── SCREEN 3 · DESTINATION DETAIL ─────── */
+#screen-detail { background: var(--alb); color: var(--gri-text); padding-bottom: 76px; overflow-y: auto; }
+.detail-hero {
+  height: 280px; position: relative;
+}
+.detail-hero img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+.detail-back {
+  position: absolute; top: 44px; left: 16px;
+  width: 36px; height: 36px; border-radius: 50%;
+  background: rgba(255,255,255,.95);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+}
+.detail-fav {
+  position: absolute; top: 44px; right: 16px;
+  width: 36px; height: 36px; border-radius: 50%;
+  background: rgba(255,255,255,.95);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; color: var(--rosu-accent);
+}
+.detail-content { padding: 20px; }
+.detail-tag {
+  display: inline-block;
+  background: var(--galben-vibrant); color: var(--albastru-profund);
+  font-family: var(--font-titlu);
+  font-size: 9px; font-weight: 800; letter-spacing: .15em;
+  text-transform: uppercase; padding: 5px 10px; border-radius: 4px;
+  margin-bottom: 10px;
+}
+.detail-title {
+  font-family: var(--font-titlu);
+  font-size: 22px; font-weight: 800; color: var(--albastru-profund);
+  letter-spacing: -.01em; margin-bottom: 6px;
+}
+.detail-loc {
+  font-size: 12px; color: var(--gri-text);
+  display: flex; align-items: center; gap: 6px;
+  margin-bottom: 16px;
+}
+.detail-stats {
+  display: flex; gap: 12px; margin-bottom: 18px;
+}
+.detail-stat {
+  flex: 1;
+  background: var(--gri-deschis);
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+}
+.detail-stat .num {
+  font-family: var(--font-titlu);
+  font-size: 16px; font-weight: 800; color: var(--albastru-profund);
+}
+.detail-stat .lbl {
+  font-size: 9px; color: var(--gri-text);
+  letter-spacing: .1em; text-transform: uppercase;
+  margin-top: 3px;
+}
+.detail-desc {
+  font-size: 12.5px; line-height: 1.65; color: var(--gri-text);
+  margin-bottom: 20px;
+}
+.detail-cta {
+  width: 100%; padding: 14px;
+  background: var(--albastru-profund); color: var(--alb);
+  font-family: var(--font-titlu);
+  font-size: 12px; font-weight: 800; letter-spacing: .15em;
+  text-transform: uppercase;
+  border: 0; border-radius: 12px; cursor: pointer;
+}
+
+/* ─────── SCREEN 4 · MAP ─────── */
+#screen-map { background: #c8d6e0; padding-bottom: 76px; position: relative; }
+.map-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(circle at 30% 40%, rgba(46,125,50,.25) 0%, transparent 30%),
+    radial-gradient(circle at 70% 60%, rgba(255,199,44,.18) 0%, transparent 25%),
+    radial-gradient(circle at 50% 80%, rgba(11,60,93,.2) 0%, transparent 30%),
+    linear-gradient(135deg, #b8cdd9 0%, #d4e0e8 100%);
+}
+.map-bg::before {
+  content: ""; position: absolute; inset: 0;
+  background-image:
+    linear-gradient(0deg, rgba(11,60,93,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11,60,93,.05) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+.map-header {
+  position: relative; z-index: 2;
+  padding: 8px 20px 0;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.map-header h3 {
+  font-family: var(--font-titlu);
+  font-size: 14px; font-weight: 700; color: var(--albastru-profund);
+}
+.map-search {
+  position: relative; z-index: 2;
+  margin: 12px 20px 0;
+  background: var(--alb);
+  border-radius: 12px;
+  padding: 12px 16px;
+  display: flex; align-items: center; gap: 10px;
+  font-size: 12px; color: var(--gri-text);
+  box-shadow: 0 4px 16px rgba(0,0,0,.08);
+}
+.map-pin {
+  position: absolute;
+  width: 32px; height: 32px;
+  background: var(--rosu-accent);
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 12px rgba(200,16,46,.4);
+  z-index: 3;
+  cursor: pointer;
+  transition: transform .2s;
+}
+.map-pin::after {
+  content: ""; width: 10px; height: 10px;
+  background: var(--alb); border-radius: 50%;
+  transform: rotate(45deg);
+}
+.map-pin:hover { transform: rotate(-45deg) scale(1.15); }
+.map-pin.albastru { background: var(--albastru-profund); box-shadow: 0 4px 12px rgba(11,60,93,.4); }
+.map-pin.galben   { background: var(--galben-vibrant); box-shadow: 0 4px 12px rgba(255,199,44,.5); }
+.map-pin.galben::after { background: var(--albastru-profund); }
+.map-pin.verde    { background: var(--verde-natura); box-shadow: 0 4px 12px rgba(46,125,50,.4); }
+
+.map-card {
+  position: absolute; bottom: 90px; left: 16px; right: 16px;
+  background: var(--alb);
+  border-radius: 16px;
+  padding: 14px;
+  display: flex; gap: 12px;
+  z-index: 4;
+  box-shadow: 0 12px 30px rgba(0,0,0,.18);
+}
+.map-card img {
+  width: 70px; height: 70px;
+  border-radius: 10px; object-fit: cover;
+  flex-shrink: 0;
+}
+.map-card-meta { flex: 1; min-width: 0; }
+.map-card .tag {
+  font-family: var(--font-titlu);
+  font-size: 9px; font-weight: 800; color: var(--rosu-accent);
+  letter-spacing: .15em; text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.map-card .title {
+  font-family: var(--font-titlu);
+  font-size: 14px; font-weight: 700; color: var(--albastru-profund);
+  margin-bottom: 3px;
+}
+.map-card .meta {
+  font-size: 10px; color: var(--gri-text);
+  display: flex; align-items: center; gap: 6px;
+}
+
+/* ─────── BOTTOM NAV (shared) ─────── */
+.bottom-nav {
+  position: absolute;
+  left: 12px; right: 12px; bottom: 12px;
+  height: 60px;
+  background: rgba(11,60,93,.96);
+  backdrop-filter: blur(20px);
+  border-radius: 18px;
+  display: flex; justify-content: space-around; align-items: center;
+  padding: 0 14px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.25);
+}
+.bottom-nav.dark-card {
+  background: rgba(255,255,255,.96);
+  color: var(--albastru-profund);
+}
+.nav-item {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 3px;
+  font-family: var(--font-titlu);
+  font-size: 8px; font-weight: 700; letter-spacing: .1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.5); cursor: pointer;
+  background: none; border: 0;
+  padding: 4px 6px;
+  transition: color .2s;
+}
+.nav-item.active { color: var(--galben-vibrant); }
+.nav-item:hover { color: rgba(255,255,255,.85); }
+.nav-item.active:hover { color: var(--galben-vibrant); }
+.nav-item .icon { font-size: 16px; }
+.bottom-nav.dark-card .nav-item { color: rgba(11,60,93,.5); }
+.bottom-nav.dark-card .nav-item.active { color: var(--rosu-accent); }
+.bottom-nav.dark-card .nav-item:hover { color: rgba(11,60,93,.9); }
+
+/* ─────── PHONE LABEL UNDER ─────── */
+.phone-caption {
+  margin-top: 18px;
+  font-family: var(--font-titlu);
+  font-size: 11px; font-weight: 700; letter-spacing: .25em;
+  text-transform: uppercase; color: rgba(255,255,255,.45);
+  text-align: center;
+}
+
+@media (max-width: 380px) {
+  .phone { transform: scale(.9); transform-origin: top center; }
+  .page-head h1 { font-size: 28px; }
+}
+</style>
+</head>
+<body>
+
+<div class="page-head">
+  <div class="eyebrow">România · App Mockup</div>
+  <h1>Aplicație Turism România</h1>
+  <p>Mockup interactiv — explorează ecranele aplicației mobile concepute pe baza identității vizuale naționale.</p>
+</div>
+
+<div class="screen-tabs">
+  <button class="screen-tab active" data-screen="splash">Splash</button>
+  <button class="screen-tab" data-screen="home">Home</button>
+  <button class="screen-tab" data-screen="detail">Detaliu</button>
+  <button class="screen-tab" data-screen="map">Hartă</button>
+</div>
+
+<div class="phone">
+
+  <!-- SCREEN 1 · SPLASH -->
+  <div class="screen active" id="screen-splash">
+    <div class="tricolor">
+      <div class="tc tc1"></div>
+      <div class="tc tc2"></div>
+      <div class="tc tc3"></div>
+    </div>
+    <img class="splash-logo" src="clean/transparent/02-logo-fundal-negru.png" alt="România">
+    <h2>România</h2>
+    <div class="subtitle">Discover · Descoperă</div>
+    <button class="splash-cta" data-go="home">Începe explorarea</button>
+    <button class="splash-link">Sunt deja membru</button>
+  </div>
+
+  <!-- SCREEN 2 · HOME -->
+  <div class="screen" id="screen-home">
+    <div class="status-bar">
+      <span>9:41</span>
+      <div class="icons">
+        <div class="ico" style="width:16px;"></div>
+        <div class="ico" style="width:14px;"></div>
+        <div class="ico" style="width:22px;"></div>
+      </div>
+    </div>
+
+    <div class="app-header">
+      <div>
+        <div class="greeting-eyebrow">Bun venit</div>
+        <div class="greeting-name">Salut, Luca</div>
+      </div>
+      <div class="avatar">LM</div>
+    </div>
+
+    <div class="search-bar">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg>
+      <span>Caută destinații, obiective…</span>
+    </div>
+
+    <div class="section-title">
+      <h3>Recomandate</h3>
+      <span class="see-all">Vezi tot</span>
+    </div>
+
+    <div class="featured-card" data-go="detail">
+      <img src="photos/05-peles.jpg" alt="Peleș">
+      <div class="featured-overlay"></div>
+      <div class="featured-meta">
+        <span class="featured-tag">Patrimoniu UNESCO</span>
+        <div class="featured-title">Castelul Peleș</div>
+      </div>
+    </div>
+
+    <div class="section-title">
+      <h3>Destinații populare</h3>
+      <span class="see-all">Hartă</span>
+    </div>
+
+    <div class="dest-grid">
+      <div class="dest-card" data-go="detail">
+        <img src="photos/01-carpati.jpg" alt="Carpați">
+        <div class="dest-overlay"></div>
+        <div class="dest-name">Munții Carpați</div>
+      </div>
+      <div class="dest-card" data-go="detail">
+        <img src="photos/02-delta.jpg" alt="Delta">
+        <div class="dest-overlay"></div>
+        <div class="dest-name">Delta Dunării</div>
+      </div>
+      <div class="dest-card" data-go="detail">
+        <img src="photos/06-voronet.jpg" alt="Voroneț">
+        <div class="dest-overlay"></div>
+        <div class="dest-name">Mănăstirea Voroneț</div>
+      </div>
+      <div class="dest-card" data-go="detail">
+        <img src="photos/04-sighisoara.jpg" alt="Sighișoara">
+        <div class="dest-overlay"></div>
+        <div class="dest-name">Sighișoara</div>
+      </div>
+    </div>
+
+    <div class="bottom-nav">
+      <button class="nav-item active"><span class="icon">⌂</span>Acasă</button>
+      <button class="nav-item" data-go="map"><span class="icon">⌖</span>Hartă</button>
+      <button class="nav-item"><span class="icon">♡</span>Salvate</button>
+      <button class="nav-item"><span class="icon">◉</span>Profil</button>
+    </div>
+  </div>
+
+  <!-- SCREEN 3 · DETAIL -->
+  <div class="screen" id="screen-detail">
+    <div class="detail-hero">
+      <img src="photos/05-peles.jpg" alt="Castelul Peleș">
+      <button class="detail-back" data-go="home" title="Înapoi">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0B3C5D" stroke-width="2.5"><path d="m15 18-6-6 6-6"/></svg>
+      </button>
+      <button class="detail-fav" title="Salvează">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      </button>
+    </div>
+    <div class="detail-content">
+      <span class="detail-tag">Patrimoniu UNESCO</span>
+      <h2 class="detail-title">Castelul Peleș</h2>
+      <div class="detail-loc">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Sinaia, Prahova
+      </div>
+
+      <div class="detail-stats">
+        <div class="detail-stat">
+          <div class="num">4.9</div>
+          <div class="lbl">Rating</div>
+        </div>
+        <div class="detail-stat">
+          <div class="num">2.4k</div>
+          <div class="lbl">Recenzii</div>
+        </div>
+        <div class="detail-stat">
+          <div class="num">42 €</div>
+          <div class="lbl">Bilet</div>
+        </div>
+      </div>
+
+      <p class="detail-desc">Castelul Peleș este una dintre cele mai frumoase clădiri regale din Europa, construit în stil neorenascentist între 1873 și 1914 ca reședință de vară pentru regele Carol I al României. Adăpostește peste 4.000 de piese de artă și mobilier de epocă.</p>
+
+      <button class="detail-cta">Rezervă vizita</button>
+    </div>
+
+    <div class="bottom-nav dark-card">
+      <button class="nav-item" data-go="home"><span class="icon">⌂</span>Acasă</button>
+      <button class="nav-item" data-go="map"><span class="icon">⌖</span>Hartă</button>
+      <button class="nav-item active"><span class="icon">♡</span>Salvate</button>
+      <button class="nav-item"><span class="icon">◉</span>Profil</button>
+    </div>
+  </div>
+
+  <!-- SCREEN 4 · MAP -->
+  <div class="screen" id="screen-map">
+    <div class="map-bg"></div>
+
+    <div class="status-bar" style="color:var(--albastru-profund);">
+      <span>9:41</span>
+      <div class="icons">
+        <div class="ico" style="width:16px;"></div>
+        <div class="ico" style="width:14px;"></div>
+        <div class="ico" style="width:22px;"></div>
+      </div>
+    </div>
+
+    <div class="map-header">
+      <h3>Hartă · România</h3>
+      <span style="font-size:10px;color:var(--rosu-accent);font-weight:700;letter-spacing:.1em;text-transform:uppercase;">12 obiective</span>
+    </div>
+
+    <div class="map-search">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg>
+      <span>Caută în harta turistică</span>
+    </div>
+
+    <!-- Pini pe hartă -->
+    <div class="map-pin galben" style="top:160px; left:80px;" data-go="detail" title="Castelul Peleș"></div>
+    <div class="map-pin albastru" style="top:200px; left:160px;"></div>
+    <div class="map-pin" style="top:220px; left:230px;"></div>
+    <div class="map-pin verde" style="top:300px; left:120px;"></div>
+    <div class="map-pin" style="top:340px; left:200px;"></div>
+    <div class="map-pin albastru" style="top:280px; left:60px;"></div>
+
+    <!-- Card destinație evidențiată -->
+    <div class="map-card">
+      <img src="photos/05-peles.jpg" alt="Peleș">
+      <div class="map-card-meta">
+        <div class="tag">Cel mai aproape</div>
+        <div class="title">Castelul Peleș</div>
+        <div class="meta">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/></svg>
+          12.4 km · Sinaia
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-nav dark-card">
+      <button class="nav-item" data-go="home"><span class="icon">⌂</span>Acasă</button>
+      <button class="nav-item active"><span class="icon">⌖</span>Hartă</button>
+      <button class="nav-item"><span class="icon">♡</span>Salvate</button>
+      <button class="nav-item"><span class="icon">◉</span>Profil</button>
+    </div>
+  </div>
+
+</div>
+
+<div class="phone-caption">Tap pe taburi sau în interiorul ecranelor pentru navigare</div>
+
+<script>
+(function(){
+  const tabs    = document.querySelectorAll('.screen-tab');
+  const screens = document.querySelectorAll('.screen');
+
+  function go(name){
+    screens.forEach(s => s.classList.toggle('active', s.id === 'screen-' + name));
+    tabs.forEach(t => t.classList.toggle('active', t.dataset.screen === name));
+  }
+
+  tabs.forEach(t => t.addEventListener('click', () => go(t.dataset.screen)));
+
+  // Allow any element with data-go to navigate
+  document.querySelectorAll('[data-go]').forEach(el => {
+    el.addEventListener('click', e => {
+      e.stopPropagation();
+      go(el.dataset.go);
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
